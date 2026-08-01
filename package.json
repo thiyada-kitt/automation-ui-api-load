@@ -1,0 +1,20 @@
+{
+  "name": "automation-ui-api-load",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Comprehensive QA suite for UI, API, automation, and load testing",
+  "scripts": {
+    "test:playwright": "playwright test",
+    "test:cypress": "cypress run",
+    "test:selenium": "node tests/ui/selenium/selenium-smoke.spec.js",
+    "test:robot": "python -m robot tests/ui/robot",
+    "test:k6": "k6 run tests/load/k6/http-smoke.js",
+    "test:jmeter:validate": "python scripts/validate_jmeter_plan.py",
+    "test:all": "npm run test:playwright && npm run test:cypress"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.0",
+    "cypress": "^14.5.4",
+    "selenium-webdriver": "^4.34.0"
+  }
+}
